@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bella Bao's Personal Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <header>
+    <div class="container">
+      <ul class="menu">
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Work Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  
+  <!-- Profile Section -->
+  <section id="profile">
+    <div class="container">
+      <div class="profile">
+        <div class="profile-img">
+          <img src="profile/1.svg" alt="Bella Bao" style="width: 250px; height: auto; max-width: 100%; border-radius: 50%;">
+        </div>
+        <div class="profile-info">
+          <h1>Bella Bao</h1>
+          <p class="summary">
+            Bella Bao is a skilled product manager and software engineer with experience in AI security startups and major tech companies. She excels in identifying customer needs, leading product development, and enhancing user experience. Her technical expertise includes Figma, HTML, CSS, Google Analytics, and React, with a strong background in bioinformatics and computer science.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Education Section -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>M.S. in Health Informatics</h3>
+          <span>May. 2025 (expected)</span>
+          <p>Yale University</p>
+        </div>
+        <div class="timeline-item">
+          <h3>B.S. in Bioinformatics</h3>
+          <span>June. 2023</span>
+          <p>University of California, San Diego</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Work Experience Section -->
+  <section id="work">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Product Manager</h3>
+          <span>Watermarked.ai, Dec. 2024 – Present</span>
+          <p>Identified 15+ core customer needs through analysis of 100+ user interviews, targeting AI deepfake detection and content protection challenges. Redesigned and launched company website using Figma, HTML, CSS, integrating Google Analytics and A/B testing to improve UI/UX. Led revamp of investor pitch materials for 2025 Rice Business Plan Competition. Collaborated with Y Combinator partners during Yale’s startup program to refine product-market fit strategy.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Software Engineer Intern</h3>
+          <span>Adobe Inc., May. 2024 – Aug. 2024</span>
+          <p>Led the end-to-end design and implementation of the Security Auto-Ticketing feature in the developer portal. Defined 2 data metrics to measure developer productivity. Reduced deployment configuration time by 20% through revamping the service onboarding experience.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Software Engineer Intern</h3>
+          <span>ByteDance Inc., Jun. 2023 – Aug. 2023</span>
+          <p>Identified unique user needs for product through 10 target users feedback calls. Conducted user research and proposed enhancements for the online editing of WDL documents. Identified user friction points in the search experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              Yale CourseMap
+            </div>
+            <div class="card-back">
+              <h3>Yale CourseMap</h3>
+              <p>Initiated and led a cross-functional team of 6 in developing Yale CourseMap, a React-based course recommendation tool with OpenAI API integration.</p>
+              <a href="#" target="_blank">View More</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              Web4Me
+            </div>
+            <div class="card-back">
+              <h3>Web4Me</h3>
+              <p>Founded AI-driven personal website generator, enabling one-click resume-to-website conversion using React and AWS EC2.</p>
+              <a href="#" target="_blank">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container contact">
+      <h2>Contact Me</h2>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:bella.bao@yale.edu" aria-label="Email">Email</a>
+        <a href="tel:+15105132529" aria-label="Phone">Phone</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Bella Bao. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- JavaScript for extra interactivity -->
+  <script>
+    // Smooth scroll for internal links (if browser doesn't support CSS scroll-behavior)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+    
+    // Intersection Observer for unfolding timeline items on scroll
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+    
+    timelineItems.forEach(item => {
+      observer.observe(item);
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
